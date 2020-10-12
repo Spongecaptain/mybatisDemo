@@ -25,4 +25,6 @@ public interface UserMapper {
             @Result(property = "age",column = "age",javaType = Integer.class)
     })
     User getOne(int id);
+
+    //xml-temp
 }
