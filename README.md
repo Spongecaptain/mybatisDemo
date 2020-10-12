@@ -51,4 +51,6 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ## 4. XML 式 MyBatis 使用案例
 
-见项目的 xml 分支
+见项目的 xml 分支。
+
+更完整的例子可以参考：https://www.cnblogs.com/ityouknow/p/6037431.html
