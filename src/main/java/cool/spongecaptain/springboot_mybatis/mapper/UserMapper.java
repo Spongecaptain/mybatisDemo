@@ -3,8 +3,12 @@ package cool.spongecaptain.springboot_mybatis.mapper;
 import cool.spongecaptain.springboot_mybatis.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 //@Mapper 这个注解必须加，否则会抛出  UserMapper' that could not be found. 的异常
 @Mapper
 public interface UserMapper {
     User getOne(int id);
+
+    List<User> getAllUser();
 }
