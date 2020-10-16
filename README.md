@@ -54,3 +54,43 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 见项目的 xml 分支。
 
 更完整的例子可以参考：https://www.cnblogs.com/ityouknow/p/6037431.html
+
+
+## 5. Spring Boot 结合 jsp
+
+见项目的 jsp 分支。
+
+Spring Boot 结合 jsp 项目主要参考于：https://www.cnblogs.com/luzhanshi/p/10923867.html
+
+大致步骤为：
+
+- 在 src/main 目录下创建目录 webapp/WEB-INF/jsp 用于存放 jsp 页面;
+- 在 Project Structure 的 Module 栏中选则 Spring 的 Web，然后将 Web App 设置为 Web resource directory
+- 在 application.properties 配置文件中添加如下的配置
+    ```properties
+    # jsp 资源目录配置
+    spring.mvc.view.prefix=/WEB-INF/jsp
+    spring.mvc.view.suffix=.jsp    
+    ```
+- 添加额外依赖
+    ```xml
+    <!--web支持-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    
+    <!--JavaServer Pages Standard Tag Library，JSP标准标签库-->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+    </dependency>
+    
+    <!--内置tomcat对Jsp支持的依赖，用于编译Jsp-->
+    <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+    </dependency>
+   ```
+  - 去除模板框架的依赖
